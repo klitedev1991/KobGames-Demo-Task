@@ -1,0 +1,36 @@
+.logo-content {
+  background-color: #da5a5a;
+  color: #fff0da;
+  padding: 6px;
+  transform: matrix(1, -0.05, 0, 1, 0, 0);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-content p {
+  font-family: 'Fascinate', cursive;
+  font-size: 30px;
+  transform: matrix(1, 0.05, 0, 1, 0, 0);
+  margin-bottom: 0;
+}
+
+.logo-container {
+  position: relative;
+}
+
+.logo-container a {
+  text-decoration: none;
+}
+
+.logo-shadow {
+  background-color: #e2d1b3;
+  transform: matrix(1, 0.05, 0, 1, 0, 0);
+
+  width: 132px;
+  height: 56px;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}

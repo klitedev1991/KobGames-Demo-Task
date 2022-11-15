@@ -1,0 +1,17 @@
+.item-group {
+  margin: 32px 0px;
+}
+
+.item-list-header {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.item-list-header h2 {
+  font-family: 'MS sans', sans-serif;
+  color: #6c5f4c;
+  padding-bottom: 30px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+}

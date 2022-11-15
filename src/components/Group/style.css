@@ -1,0 +1,22 @@
+.group-container-root {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media only screen and (min-width: 600px) {
+  .group-container-root {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .group-container {
+    max-width: 1280px;
+  }
+}

@@ -1,0 +1,34 @@
+.btn-wallet {
+  background-color: #da5a5a !important;
+  color: #fff0da !important;
+  border-radius: 0 !important;
+  margin-left: 12px;
+
+  font-family: 'DM sans' !important;
+  font-style: normal;
+  font-weight: 500 !important;
+  line-height: 150% !important;
+  text-transform: uppercase;
+}
+
+.btn-connect {
+  display: flex;
+  font-family: 'DM sans', sans-serif;
+  color: #fff0da;
+  text-decoration: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-connect div {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.btn-connect:hover {
+  color: #fff0da;
+}
+
+.btn-wallet:hover {
+  border-radius: 8px !important;
+}

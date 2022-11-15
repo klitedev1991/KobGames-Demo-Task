@@ -1,0 +1,21 @@
+header {
+  /* position: fixed;
+  top: 0; */
+  height: 70px;
+  background-color: #fff0da;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-inner {
+  width: 90%;
+  text-align: center;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+}

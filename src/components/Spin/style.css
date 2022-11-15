@@ -1,0 +1,15 @@
+.spinner-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.spinner-container h6 {
+  margin-left: 10px;
+}
+
+.spinner-item {
+  padding-left: 56px;
+}
