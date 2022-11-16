@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import HeaderWalletButton from '../HeaderWalletButton';
 import Logo from '../Logo';
 import WalletType from '../WalletButton';
 
@@ -137,7 +138,13 @@ const Navbar = (props) => {
               </a>
             </li>
             <li>
-              <WalletType {...props} />
+              {(props.btnDataOfCard.status === 'open' ||
+                props.btnDataOfCard.status === 'processing') && (
+                <HeaderWalletButton {...props} />
+              )}
+              {props.btnDataOfCard.status !== 'open' && (
+                <WalletType {...props} />
+              )}
             </li>
           </ul>
         </div>

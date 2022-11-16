@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 import './style.css';

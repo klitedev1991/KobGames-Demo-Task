@@ -6,14 +6,8 @@ import './style.css';
 const Card = (props) => {
   const { itemKey, image, quantity, chainLogo } = props;
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const selectWallet = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
   return (
-    <div className="card-container" key={itemKey}>
+    <div className="card-container">
       <div className="card">
         <div className="card-img">
           <img src={image} alg="card-image" />

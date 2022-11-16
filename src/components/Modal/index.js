@@ -79,8 +79,6 @@ function Block({ isOpen, title, onToggle, duration = '500ms', children }) {
 }
 
 const Modal = (props) => {
-  const [isCollapsing, setIsCollapsing] = useState(false);
-
   const handleModalButtonClick = (imgSrc, title, isEnabled) => {
     props.handleClickInModal(imgSrc, title, isEnabled);
     props.handleCloseModal();

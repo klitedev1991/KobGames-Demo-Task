@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import WalletType from '../WalletButton';
 
+import WalletType from '../WalletButton';
 import Logo from '../Logo';
+import HeaderWalletButton from '../HeaderWalletButton';
 
 import './style.css';
 
@@ -158,7 +159,12 @@ const SmallScreensNavbar = (props) => {
               </li>
             </ul>
           </div>
-          <WalletType {...props} />
+
+          {(props.btnDataOfCard.status === 'open' ||
+            props.btnDataOfCard.status === 'processing') && (
+            <HeaderWalletButton {...props} />
+          )}
+          {props.btnDataOfCard.status !== 'open' && <WalletType {...props} />}
         </div>
       </div>
     </nav>

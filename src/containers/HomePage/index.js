@@ -13,9 +13,6 @@ import { cards, items } from '../../contants/variable';
 import Spin from '../../components/Spin';
 
 const HomePage = (props) => {
-  // const [isLessMode, setIsLessMode] = useState(false);
-  // const [btnDataOfCard, setBtnDataOfCard] = useState();
-
   const [chainType, setChainType] = useState('SOL');
   const [chainQuantity, setChainQuantity] = useState('100X');
 
@@ -49,10 +46,6 @@ const HomePage = (props) => {
                 quantity={value.quantity}
                 image={value.image}
                 {...props}
-                // isLessMode={isLessMode}
-                // setIsLessMode={setIsLessMode}
-                // handleClickInModal={handleClickInModal}
-                // btnDataOfCard={btnDataOfCard}
               />
             ))}
           {cards[chainType][chainQuantity].length === 0 && <Spin />}

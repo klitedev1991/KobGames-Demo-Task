@@ -8,9 +8,20 @@ import LeaderboardPage from '../containers/LeaderboardPage';
 
 const Router = () => {
   const [isLessMode, setIsLessMode] = useState(false);
-  const [btnDataOfCard, setBtnDataOfCard] = useState();
+  const [btnDataOfCard, setBtnDataOfCard] = useState({
+    image: '',
+    status: 'select-wallet',
+  });
   const handleClickInModal = (image, btnText, isEnable) => {
-    setBtnDataOfCard({ image, btnText, isEnable });
+    setBtnDataOfCard({ ...btnDataOfCard, image: image, status: 'open' });
+  };
+
+  const setDisconnect = () => {
+    setBtnDataOfCard({ ...btnDataOfCard, image: '', status: 'select-wallet' });
+  };
+
+  const setStatusToOpen = (image) => {
+    setBtnDataOfCard({ ...btnDataOfCard, image: image, status: 'open' });
   };
 
   return (
@@ -19,8 +30,9 @@ const Router = () => {
         <Header
           isLessMode={isLessMode}
           setIsLessMode={setIsLessMode}
-          handleClickInModal={handleClickInModal}
           btnDataOfCard={btnDataOfCard}
+          handleClickInModal={handleClickInModal}
+          setDisconnect={setDisconnect}
         />
         <Routes>
           <Route
@@ -28,8 +40,9 @@ const Router = () => {
               <HomePage
                 isLessMode={isLessMode}
                 setIsLessMode={setIsLessMode}
-                handleClickInModal={handleClickInModal}
                 btnDataOfCard={btnDataOfCard}
+                handleClickInModal={handleClickInModal}
+                setStatusToOpen={setStatusToOpen}
               />
             }
             path="/"

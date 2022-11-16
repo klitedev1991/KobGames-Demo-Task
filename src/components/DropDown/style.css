@@ -13,12 +13,16 @@
   width: 100%;
   background-color: #4a391d;
   border: none;
-  border-radius: 0px;
+  border-radius: 2px;
   padding: 16px;
 }
 
 #dropdown-menu-align-right::after {
   display: none !important;
+}
+
+#dropdown-menu-align-right:hover {
+  background-color: #6d542d;
 }
 
 .dropdown-item-width-100 {
@@ -37,6 +41,10 @@
   color: #fff0da !important;
 }
 
+.dropdown-item:hover {
+  background-color: #9b835dc2 !important;
+}
+
 .dropdown-item-active {
-  background-color: #9b835dc2 !important ;
+  background-color: #9b835dc2 !important;
 }

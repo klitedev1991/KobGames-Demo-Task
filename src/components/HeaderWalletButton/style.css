@@ -1,0 +1,31 @@
+#header-dropdown-wallet {
+  width: 100%;
+  background-color: #da5a5a;
+  color: #fff0da !important;
+  border: none;
+  border-radius: 2px;
+  padding: 8px;
+}
+
+#header-dropdown-wallet::after {
+  display: none !important;
+}
+
+#header-dropdown-wallet:hover {
+  border-radius: 6px;
+}
+
+.header-wallet-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-wallet-img {
+  width: 29px;
+  height: 29px;
+}
+
+.header-wallet-button-content {
+  margin-left: 8px;
+}
