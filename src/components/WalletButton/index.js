@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Modal from '../Modal';
+import Modal from "../Modal";
+import NoteModal from "../NoteModal";
+import AnimationModal from "../AnimationModal";
 
-import { delay } from '../../utils/functions';
+import { delay } from "../../utils/functions";
 
-import './style.css';
+import "./style.css";
 
 const SelectWalletButton = ({ handleOpenModal }) => {
   const handleClick = () => {
@@ -20,12 +22,19 @@ const SelectWalletButton = ({ handleOpenModal }) => {
   );
 };
 
-const OpenButton = ({ image, itemKey, setSelectedBtn, setStatusToOpen }) => {
+const OpenButton = ({
+  image,
+  itemKey,
+  setSelectedBtn,
+  setAnimation,
+  setStatusToOpen,
+}) => {
   const showAnimation = async () => {
-    console.log('before');
+    console.log("before");
     await delay(1000);
+    setAnimation();
     setStatusToOpen(image);
-    console.log('after');
+    console.log("after");
   };
 
   const handleClick = () => {
@@ -54,6 +63,8 @@ const ProcessingButton = ({ setInitialStatus }) => {
 const WalletType = (props) => {
   const { itemKey, btnDataOfCard, setStatusToOpen } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAnimationModalOpen, setIsAnimationModalOpen] = useState(false);
+  const [isNoteModalOpen, setIsNoteModalOpen] = useState(false);
   const [selectedOpenBtn, setSelectedOpenBtn] = useState(-1);
 
   const handleOpenModal = (isOpen) => {
@@ -65,32 +76,45 @@ const WalletType = (props) => {
   };
 
   const handleOpenButton = (selected) => {
-    console.log(selected);
     setSelectedOpenBtn(selected);
-    btnDataOfCard.status = 'processing';
+    btnDataOfCard.status = "processing";
   };
 
   const setInitialStatus = (initial) => {
     setSelectedOpenBtn(initial);
   };
 
+  const handleAnimation = () => {
+    setIsAnimationModalOpen(true);
+  };
+
+  const setEndEvent = () => {
+    setIsAnimationModalOpen(false);
+    setIsNoteModalOpen(true);
+  };
+
+  const closeNoteModal = () => {
+    setIsNoteModalOpen(false);
+  };
+
   return (
     <>
-      {btnDataOfCard.status === 'select-wallet' && (
+      {btnDataOfCard.status === "select-wallet" && (
         <SelectWalletButton
           itemKey={itemKey}
           handleOpenModal={handleOpenModal}
         />
       )}
-      {btnDataOfCard.status === 'open' && (
+      {btnDataOfCard.status === "open" && (
         <OpenButton
           itemKey={itemKey}
           setSelectedBtn={handleOpenButton}
+          setAnimation={handleAnimation}
           setStatusToOpen={setStatusToOpen}
           image={btnDataOfCard.image}
         />
       )}
-      {btnDataOfCard.status === 'processing' && (
+      {btnDataOfCard.status === "processing" && (
         <ProcessingButton setInitialStatus={setInitialStatus} />
       )}
       <Modal
@@ -98,6 +122,11 @@ const WalletType = (props) => {
         handleCloseModal={handleCloseModal}
         {...props}
       />
+      <AnimationModal
+        isShowModal={isAnimationModalOpen}
+        setPlayEnded={setEndEvent}
+      />
+      <NoteModal isShowModal={isNoteModalOpen} closeModal={closeNoteModal} />
     </>
   );
 };

@@ -1,0 +1,31 @@
+.note-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  /* width: 320px; */
+  z-index: 50000;
+}
+
+.note-modal-container {
+  padding: 65px;
+  border: 1px solid #434343;
+  background-color: rgb(74, 57, 29);
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  justify-content: center;
+}
+
+.note-modal-container h4 {
+  color: rgb(250, 232, 199);
+  font-size: 26px;
+  font-family: 'MS sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.235;
+}

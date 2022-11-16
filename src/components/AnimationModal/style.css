@@ -1,0 +1,12 @@
+.video-modal {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  width: 70%;
+  z-index: 50000;
+}
